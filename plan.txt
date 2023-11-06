@@ -1,0 +1,15 @@
+1. Znaczniki semantyczne
+2. Sposób na rozmieszczenie
+________________
+
+1. Wyszukanie elementów
+2. Obiekt nasłuchujący do przycisku
+3. Funkcja anonimowa z rejestracją zdarzenia
+4. preventDefault()
+5. Pobieramy dane -> konwersja typu
+6. Dokonujemy obliczeń
+7. Wypisanie danych
+8. Instrukcje if, else if, else
+
+<span style="color:#0F0">
+    w normie</span>
