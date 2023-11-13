@@ -10,7 +10,7 @@
 <body>
     <main>
         <baner>
-            <img src="ee.09_rysunek2.jpg" alt="baner"/>
+            <img src="ee.09_rysunek2.jpg" alt="baner" />
         </baner>
         <aside>
             <p>
@@ -21,25 +21,60 @@
             </p>
         </aside>
         <div>
-            <p>
+            <form>
                 <legend>Waga:</legend>
                 <label for="waga">
                     <input type="number" id="waga" name="waga" size="20" required /></label>
-            </p>
-            <p>
+
                 <legend>Wzrost:</legend>
                 <label for="wzrost">
                     <input type="number" id="wzrost" name="wzrost" size="20" required /></label>
-            </p>
-            <p>
-                <button>Oblicz BMI</button>
-            </p>
-
+                <button id="btn">Oblicz BMI</button>
+            </form>
+            <p id="display"></p>
+            <p id="kategoria"></p>
         </div>
         <footer>
             Autor strony: 00000000000
         </footer>
     </main>
+    <script>
+        const waga = document.querySelector("#waga");
+        const wzrost = document.querySelector("#wzrost");
+        const display = document.querySelector("#display");
+        const kategoria = document.querySelector("#kategoria");
+        const btn = document.querySelector("#btn");
+
+
+
+        btn.addEventListener('click', function (evt) {
+            evt.preventDefault();
+            const wagaValue = waga.value;
+            const wzrostValue = wzrost.value / 100;
+
+            const bmi = wagaValue / (wzrostValue * wzrostValue);
+
+            console.log(bmi.toFixed(2));
+            display.innerHTML = `Twoje BMI to :${bmi.toFixed(2)}`;
+
+            kategoria.style.color = '#f00';
+
+            if (bmi < 18, 5) {
+                kategoria.innerHTML = "Niedowaga"
+            } else if (bmi < 25) {
+                kategoria.innerHTML = "Norma"
+                kategoria.style.color = '#0f0';
+            } else if (bmi < 30) {
+                kategoria.innerHTML = "Nadwaga"
+            } else if (bmi < 35) {
+                kategoria.innerHTML = "Otyłość 1st."
+            } else if (bmi < 40) {
+                kategoria.innerHTML = "Otyłość 2st."
+            } else {
+                kategoria.innerHTML = "Otyłość 3st."
+            }
+        })
+    </script>
 </body>
 
 </html>
